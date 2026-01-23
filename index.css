@@ -314,6 +314,21 @@ header.scrolled {
     color: #000;
 }
 
+@media (max-width: 768px) {
+    .btn {
+        padding: 12px 24px;
+        /* Reduced from 20px 40px */
+        font-size: 0.7rem;
+        /* Slightly smaller text */
+        letter-spacing: 1.5px;
+    }
+
+    .btn-group {
+        gap: 12px;
+        /* tighter spacing */
+    }
+}
+
 /* --- Glass Cards --- */
 
 .grid {
