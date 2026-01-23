@@ -1,0 +1,429 @@
+:root {
+    /* Color Palette - Modern 2026 Premium */
+    --primary: #05080A;
+    /* Deeper Black */
+    --accent: #D4AF37;
+    --accent-glow: linear-gradient(135deg, #D4AF37 0%, #FFD700 50%, #B8860B 100%);
+    --secondary: #F4F1EA;
+    --text-main: #FFFFFF;
+    --text-muted: rgba(255, 255, 255, 0.6);
+    --bg-dark: #05080A;
+    --bg-card: rgba(15, 22, 28, 0.4);
+
+    /* Typography */
+    --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-heading: 'Outfit', sans-serif;
+
+    /* Spacing & Transitions */
+    --section-padding: 120px 8%;
+    --transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    --glass: rgba(5, 8, 10, 0.8);
+}
+
+@media (max-width: 768px) {
+    :root {
+        --section-padding: 80px 24px;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: default;
+}
+
+a,
+button {
+    cursor: pointer;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- Reveal Animations --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Typography Highlights --- */
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+}
+
+.text-gradient {
+    background: var(--accent-glow);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* --- Layout Components --- */
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 30px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    transition: var(--transition);
+}
+
+header.scrolled {
+    background: var(--glass);
+    backdrop-filter: blur(20px);
+    padding: 20px 5%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logo {
+    font-size: 1.1rem;
+    font-family: var(--font-heading);
+    font-weight: 800;
+    letter-spacing: 4px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: var(--transition);
+    opacity: 0.7;
+}
+
+.nav-links a:hover {
+    opacity: 1;
+    color: var(--accent);
+}
+
+/* --- Hero Section 2026 --- */
+
+.hero {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    filter: brightness(0.3) saturate(0.8);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 1200px;
+    padding: 0 5%;
+}
+
+.hero-content h1 {
+    font-size: clamp(3rem, 15vw, 10rem);
+    line-height: 0.85;
+    margin-bottom: 20px;
+    letter-spacing: -0.05em;
+    mix-blend-mode: overlay;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-content p {
+    font-size: clamp(1.1rem, 3vw, 1.4rem);
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto 40px;
+    font-weight: 400;
+}
+
+/* --- Bento Grid --- */
+
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 300px);
+    gap: 24px;
+}
+
+.bento-item {
+    background: var(--bg-card);
+    border-radius: 24px;
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.bento-large {
+    grid-column: span 2;
+    grid-row: span 2;
+    justify-content: center;
+    text-align: center;
+}
+
+.bento-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), rgba(212, 175, 55, 0.08), transparent 40%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.bento-item:hover {
+    border-color: rgba(212, 175, 55, 0.3);
+    transform: scale(1.02);
+}
+
+.bento-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 1;
+}
+
+.bento-item p {
+    color: var(--text-muted);
+    position: relative;
+    z-index: 1;
+}
+
+.bento-large {
+    grid-column: span 2;
+    grid-row: span 2;
+    justify-content: center;
+    text-align: center;
+}
+
+.bento-tall {
+    grid-row: span 2;
+}
+
+.bento-wide {
+    grid-column: span 2;
+}
+
+@media (max-width: 1024px) {
+    .bento-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+    }
+
+    .bento-large,
+    .bento-tall,
+    .bento-wide {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+}
+
+@media (max-width: 600px) {
+    .bento-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- Buttons 2026 --- */
+
+.btn-group {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.btn {
+    padding: 20px 40px;
+    border-radius: 100px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    transition: var(--transition);
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary {
+    background: var(--accent-glow);
+    color: var(--primary);
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(212, 175, 55, 0.2);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    backdrop-filter: blur(10px);
+}
+
+.btn-outline:hover {
+    background: #fff;
+    color: #000;
+}
+
+/* --- Glass Cards --- */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: var(--bg-card);
+    border-radius: 24px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent);
+    background: rgba(20, 28, 35, 0.6);
+}
+
+.card-img {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center top;
+}
+
+.card-img::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to top, var(--bg-dark), transparent);
+}
+
+.card-content {
+    padding: 40px;
+}
+
+/* --- Plan Your Visit --- */
+
+.visit-section {
+    background: radial-gradient(circle at top right, #101820, #05080A);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 80px;
+    border-radius: 40px;
+    margin: 80px 5% 100px;
+    padding: 80px;
+}
+
+.visit-content {
+    flex: 1;
+}
+
+.visit-image {
+    flex: 1;
+    height: 600px;
+    border-radius: 30px;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 1024px) {
+    .visit-section {
+        flex-direction: column-reverse;
+        padding: 40px;
+        margin: 0 20px 80px;
+    }
+
+    .visit-image {
+        height: 400px;
+        width: 100%;
+    }
+}
+
+/* --- Footer --- */
+
+footer {
+    padding: 100px 5%;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
+}
+
+.footer-logo {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.social-links a {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    color: var(--accent);
+}
