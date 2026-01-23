@@ -203,17 +203,20 @@ header.scrolled {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 40px;
-    margin-bottom: 40px;
+    gap: 20px;
+    /* Tighter gap */
+    margin-bottom: 30px;
 }
 
 /* Animated Border Container */
 .team-member {
     position: relative;
-    width: 280px;
-    padding: 3px;
-    /* Space for the border */
-    border-radius: 22px;
+    width: 300px;
+    /* Slightly wider for horizontal layout */
+    padding: 2px;
+    /* Thinner border space */
+    border-radius: 16px;
+    /* Slightly sharper corners */
     background: transparent;
     overflow: hidden;
     transition: var(--transition);
@@ -261,28 +264,42 @@ header.scrolled {
 
 /* The inner card content masking the border center */
 /* The inner card content */
+/* The inner card content */
 .card-inner {
     background: var(--bg-card);
     backdrop-filter: blur(14px);
-    border-radius: 20px;
-    padding: 30px;
+    border-radius: 14px;
+    /* Match outer radius inner */
+    padding: 15px 20px;
+    /* Compact padding */
     height: 100%;
     width: 100%;
     position: relative;
     z-index: 1;
-    text-align: center;
+    text-align: left;
+    /* Text align left for horizontal flex */
     border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    /* Flexrow */
+    align-items: center;
+    /* Vertically center */
+    gap: 20px;
+    /* Space between img and text */
 }
 
 .member-img {
-    width: 120px;
-    height: 120px;
-    margin: 0 auto 20px;
+    width: 60px;
+    /* Smaller avatar */
+    height: 60px;
+    margin: 0;
+    /* Remove bottom margin */
     border-radius: 50%;
     overflow: hidden;
     position: relative;
     border: 2px solid rgba(212, 175, 55, 0.2);
-    box-shadow: 0 0 20px rgba(212, 175, 55, 0.1);
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.1);
+    flex-shrink: 0;
+    /* Don't shrink */
 }
 
 .member-img img {
@@ -299,9 +316,11 @@ header.scrolled {
 }
 
 .member-info h3 {
-    font-size: 1.1rem;
-    margin-bottom: 5px;
+    font-size: 1rem;
+    /* Slightly smaller name */
+    margin-bottom: 2px;
     color: var(--text-main);
+    line-height: 1.2;
 }
 
 .member-info .role {
