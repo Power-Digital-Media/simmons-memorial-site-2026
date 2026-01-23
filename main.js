@@ -41,8 +41,8 @@ const revealObserver = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-// Mouse Tracking for Bento Spotlight Effect
-document.querySelectorAll('.bento-item').forEach(item => {
+// Mouse Tracking for Bento Spotlight Effect AND Team Honeycomb
+document.querySelectorAll('.bento-item, .team-section').forEach(item => {
     item.addEventListener('mousemove', e => {
         const rect = item.getBoundingClientRect();
         const x = e.clientX - rect.left;
