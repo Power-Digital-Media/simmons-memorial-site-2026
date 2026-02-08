@@ -838,3 +838,43 @@ footer {
     position: relative;
     z-index: 2;
 }
+
+/* --- Contact Form Styling --- */
+#visit-form input,
+#visit-form textarea {
+    outline: none;
+}
+
+#visit-form input:focus,
+#visit-form textarea:focus {
+    border-color: var(--accent);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+}
+
+#visit-form input::placeholder,
+#visit-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+#visit-form input[type="date"] {
+    color-scheme: dark;
+}
+
+#form-status.success {
+    background: rgba(76, 175, 80, 0.1);
+    border: 1px solid rgba(76, 175, 80, 0.3);
+    color: #4CAF50;
+}
+
+#form-status.error {
+    background: rgba(244, 67, 54, 0.1);
+    border: 1px solid rgba(244, 67, 54, 0.3);
+    color: #F44336;
+}
+
+@media (max-width: 768px) {
+    #visit-form>div[style*="grid-template-columns"] {
+        grid-template-columns: 1fr !important;
+    }
+}

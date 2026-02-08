@@ -150,3 +150,53 @@ tiltItems.forEach(item => {
 document.querySelectorAll('h1, h2').forEach(h => {
     revealObserver.observe(h);
 });
+
+// 5. Contact Form Submission
+const visitForm = document.getElementById('visit-form');
+if (visitForm) {
+    visitForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const formStatus = document.getElementById('form-status');
+        const btnText = visitForm.querySelector('.btn-text');
+        const btnLoading = visitForm.querySelector('.btn-loading');
+        const submitBtn = visitForm.querySelector('button[type="submit"]');
+
+        // Show loading state
+        btnText.style.display = 'none';
+        btnLoading.style.display = 'inline';
+        submitBtn.disabled = true;
+        formStatus.style.display = 'none';
+
+        try {
+            const formData = new FormData(visitForm);
+            const response = await fetch(visitForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                // Success
+                formStatus.textContent = '✓ Thank you! We\'ve received your information and will be in touch soon.';
+                formStatus.className = 'success';
+                formStatus.style.display = 'block';
+                visitForm.reset();
+            } else {
+                throw new Error('Form submission failed');
+            }
+        } catch (error) {
+            // Error
+            formStatus.textContent = '✗ Oops! Something went wrong. Please try again or contact us directly.';
+            formStatus.className = 'error';
+            formStatus.style.display = 'block';
+        } finally {
+            // Reset button state
+            btnText.style.display = 'inline';
+            btnLoading.style.display = 'none';
+            submitBtn.disabled = false;
+        }
+    });
+}

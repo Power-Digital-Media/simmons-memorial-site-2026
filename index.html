@@ -264,9 +264,40 @@
                         <p>118 Memorial Drive, Flora, MS 39071</p>
                     </div>
                 </div>
-                <a href="#give" class="btn btn-primary" style="margin-top: 20px; display: inline-block;">Let us know
-                    you're
-                    coming</a>
+
+                <!-- Contact Form -->
+                <form id="visit-form" action="https://formspree.io/f/xeelqbrk" method="POST" style="margin-top: 40px;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+                        <div>
+                            <input type="text" name="name" placeholder="Your Name *" required
+                                style="width: 100%; padding: 16px 20px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; color: white; font-family: var(--font-main); font-size: 0.95rem; transition: var(--transition);">
+                        </div>
+                        <div>
+                            <input type="email" name="email" placeholder="Your Email *" required
+                                style="width: 100%; padding: 16px 20px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; color: white; font-family: var(--font-main); font-size: 0.95rem; transition: var(--transition);">
+                        </div>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+                        <div>
+                            <input type="tel" name="phone" placeholder="Phone Number"
+                                style="width: 100%; padding: 16px 20px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; color: white; font-family: var(--font-main); font-size: 0.95rem; transition: var(--transition);">
+                        </div>
+                        <div>
+                            <input type="date" name="visit-date" placeholder="Preferred Visit Date"
+                                style="width: 100%; padding: 16px 20px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; color: white; font-family: var(--font-main); font-size: 0.95rem; transition: var(--transition);">
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <textarea name="message" placeholder="Any questions or special requests?" rows="4"
+                            style="width: 100%; padding: 16px 20px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; color: white; font-family: var(--font-main); font-size: 0.95rem; resize: vertical; transition: var(--transition);"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">
+                        <span class="btn-text">Let Us Know You're Coming</span>
+                        <span class="btn-loading" style="display: none;">Sending...</span>
+                    </button>
+                    <div id="form-status" style="margin-top: 20px; padding: 16px; border-radius: 12px; display: none;">
+                    </div>
+                </form>
             </div>
             <div class="visit-image"
                 style="background: url('img/church/sanctuary.jpg'); background-size: cover; background-position: center;">
