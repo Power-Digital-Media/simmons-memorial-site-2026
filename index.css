@@ -728,10 +728,16 @@ footer {
     .bento-large .bento-content {
         justify-content: flex-end !important;
         text-align: left;
+        padding-top: 200px;
     }
 
     .bento-large {
         padding-bottom: 0 !important;
+    }
+
+    /* Adjust background position on mobile to show pastor's face */
+    .bento-large.overlay-gradient::before {
+        background-position: center 20% !important;
     }
 
     /* Ensure text is bright and above overlay */
