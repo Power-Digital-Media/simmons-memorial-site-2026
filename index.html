@@ -19,6 +19,12 @@
 </head>
 
 <body>
+    <div class="bg-blobs">
+        <div class="blob b1"></div>
+        <div class="blob b2"></div>
+    </div>
+    <div class="custom-cursor"></div>
+    <div class="cursor-dot"></div>
 
     <header id="header">
         <div class="logo">SIMMONS MEMORIAL</div>
@@ -41,7 +47,7 @@
         <!-- Immersive Hero -->
         <section class="hero">
             <div class="hero-video"
-                style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1438232992991-995b7058bbb3?auto=format&fit=crop&q=80&w=2000'); background-size: cover; background-position: center;">
+                style="background-image: url('https://images.unsplash.com/photo-1438232992991-995b7058bbb3?auto=format&fit=crop&q=80&w=2000');">
             </div>
 
             <div class="hero-content">
@@ -64,7 +70,8 @@
             </div>
 
             <div class="bento-grid">
-                <div class="bento-item bento-large reveal">
+                <div class="bento-item bento-large reveal"
+                    style="background: linear-gradient(rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.4) 100%), url('img/team/pastor_curtis_new.jpg'); background-size: cover; background-position: center 10%;">
                     <div>
                         <h3 class="text-gradient">Our Vision</h3>
                         <p>"At Simmons Memorial, we believe that God has a purpose and plan for every person. We are a
@@ -78,11 +85,13 @@
                     <h3>What to Expect</h3>
                     <p>Energetic worship and biblically-grounded teaching.</p>
                 </div>
-                <div class="bento-item reveal" style="transition-delay: 0.2s;">
+                <div class="bento-item reveal"
+                    style="transition-delay: 0.2s; background: linear-gradient(rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.4) 100%), url('img/church/meeting.jpg'); background-size: cover; background-position: center;">
                     <h3>Small Groups</h3>
                     <p>Grow together in community and discipleship.</p>
                 </div>
-                <div class="bento-item bento-wide reveal" style="transition-delay: 0.3s;">
+                <div class="bento-item bento-wide reveal"
+                    style="transition-delay: 0.3s; background: linear-gradient(rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.4) 100%), url('img/church/kids_2.jpg'); background-size: cover; background-position: center;">
                     <h3>SMBC Youth</h3>
                     <p>Empowering the next generation to lead lives of meaning and purpose through Christ-centered
                         leadership.</p>
@@ -155,10 +164,10 @@
                     <div class="team-member reveal" style="width: 400px; max-width: 100%;">
                         <div class="card-border"></div>
                         <div class="card-inner">
-                            <div class="member-img" style="width: 80px; height: 80px;"><img
-                                    src="img/team/male_avatar.png" alt="Pastor Curtis May"></div>
+                            <div class="member-img"><img src="img/team/pastor_curtis_new.jpg" alt="Pastor Curtis May"
+                                    style="object-position: center 20%;"></div>
                             <div class="member-info">
-                                <h3 style="font-size: 1.2rem;">Pastor Curtis May</h3>
+                                <h3>Pastor Curtis May</h3>
                                 <p class="role">Lead Pastor</p>
                             </div>
                         </div>
@@ -169,33 +178,26 @@
                 <div class="team-group-title reveal" style="margin-bottom: 20px; font-size: 1rem;">Deacons</div>
                 <div class="team-row reveal">
                     <div class="team-member">
-                        <div class="card-border"></div>
-                        <div class="card-inner">
-                            <div class="member-img"><img src="img/team/male_avatar.png" alt="Mickey Perry"></div>
-                            <div class="member-info">
-                                <h3>Mickey Perry</h3>
-                                <p class="role">Deacon</p>
-                            </div>
+                        <div class="member-img"><img src="img/team/deacons.jpg" alt="Mickey Perry"
+                                style="object-position: 20% center;"></div>
+                        <div class="member-info">
+                            <h3>Mickey Perry</h3>
+                            <p class="role">Deacon</p>
                         </div>
                     </div>
                     <div class="team-member">
-                        <div class="card-border"></div>
-                        <div class="card-inner">
-                            <div class="member-img"><img src="img/team/male_avatar.png" alt="Stephen Janatta"></div>
-                            <div class="member-info">
-                                <h3>Stephen Janatta</h3>
-                                <p class="role">Deacon</p>
-                            </div>
+                        <div class="member-img"><img src="img/team/speaker.jpg" alt="Stephen Janatta"></div>
+                        <div class="member-info">
+                            <h3>Stephen Janatta</h3>
+                            <p class="role">Deacon / Speaker</p>
                         </div>
                     </div>
                     <div class="team-member">
-                        <div class="card-border"></div>
-                        <div class="card-inner">
-                            <div class="member-img"><img src="img/team/male_avatar.png" alt="Rick Lang"></div>
-                            <div class="member-info">
-                                <h3>Rick Lang</h3>
-                                <p class="role">Deacon</p>
-                            </div>
+                        <div class="member-img"><img src="img/team/deacons.jpg" alt="Rick Lang"
+                                style="object-position: 80% center;"></div>
+                        <div class="member-info">
+                            <h3>Rick Lang</h3>
+                            <p class="role">Deacon</p>
                         </div>
                     </div>
                 </div>
@@ -204,43 +206,31 @@
                 <div class="team-group-title reveal" style="margin: 30px 0 20px; font-size: 1rem;">Leadership</div>
                 <div class="team-row reveal">
                     <div class="team-member">
-                        <div class="card-border"></div>
-                        <div class="card-inner">
-                            <div class="member-img"><img src="img/team/female_avatar.png" alt="Krystal Coward"></div>
-                            <div class="member-info">
-                                <h3>Krystal Coward</h3>
-                                <p class="role">Secretary</p>
-                            </div>
+                        <div class="member-img"><img src="img/team/female_avatar.png" alt="Krystal Coward"></div>
+                        <div class="member-info">
+                            <h3>Krystal Coward</h3>
+                            <p class="role">Secretary</p>
                         </div>
                     </div>
                     <div class="team-member">
-                        <div class="card-border"></div>
-                        <div class="card-inner">
-                            <div class="member-img"><img src="img/team/female_avatar.png" alt="Donna Lang"></div>
-                            <div class="member-info">
-                                <h3>Donna Lang</h3>
-                                <p class="role">Treasurer / Music</p>
-                            </div>
+                        <div class="member-img"><img src="img/team/female_avatar.png" alt="Donna Lang"></div>
+                        <div class="member-info">
+                            <h3>Donna Lang</h3>
+                            <p class="role">Treasurer / Music</p>
                         </div>
                     </div>
                     <div class="team-member">
-                        <div class="card-border"></div>
-                        <div class="card-inner">
-                            <div class="member-img"><img src="img/team/female_avatar.png" alt="Trene Welch"></div>
-                            <div class="member-info">
-                                <h3>Trene Welch</h3>
-                                <p class="role">Planning Lead</p>
-                            </div>
+                        <div class="member-img"><img src="img/team/female_avatar.png" alt="Trene Welch"></div>
+                        <div class="member-info">
+                            <h3>Trene Welch</h3>
+                            <p class="role">Planning Lead</p>
                         </div>
                     </div>
                     <div class="team-member">
-                        <div class="card-border"></div>
-                        <div class="card-inner">
-                            <div class="member-img"><img src="img/team/male_avatar.png" alt="Damein Donald"></div>
-                            <div class="member-info">
-                                <h3>Damein Donald</h3>
-                                <p class="role">Audio/Video</p>
-                            </div>
+                        <div class="member-img"><img src="img/team/male_avatar.png" alt="Damein Donald"></div>
+                        <div class="member-info">
+                            <h3>Damein Donald</h3>
+                            <p class="role">Audio/Video</p>
                         </div>
                     </div>
                 </div>
@@ -273,7 +263,7 @@
                     coming</a>
             </div>
             <div class="visit-image"
-                style="background: url('https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&q=80&w=1000'); background-size: cover; background-position: center;">
+                style="background: url('img/church/sanctuary.jpg'); background-size: cover; background-position: center;">
             </div>
         </section>
     </main>
