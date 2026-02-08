@@ -138,6 +138,18 @@
      background: #1a2a3a;
  }
 
+ #sermons {
+     background: #000;
+     mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+     -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+     margin-top: -100px;
+     padding-top: 151px;
+     margin-bottom: -100px;
+     padding-bottom: 151px;
+     position: relative;
+     z-index: 2;
+ }
+
  @keyframes blobFloat {
      0% {
          transform: translate(0, 0) scale(1);
@@ -271,6 +283,11 @@
      position: relative;
      overflow: hidden;
      background-color: #000;
+     /* Fade out bottom into mission glow */
+     mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+     -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+     margin-bottom: -100px;
+     z-index: 2;
  }
 
  .hero-video {
@@ -383,6 +400,17 @@
  }
 
  /* --- Sections --- */
+ #about {
+     background: linear-gradient(to bottom,
+             transparent 0%,
+             rgba(212, 175, 55, 0.1) 40%,
+             rgba(212, 175, 55, 0.1) 60%,
+             transparent 100%);
+     padding: 150px 8%;
+     position: relative;
+     z-index: 1;
+ }
+
  section {
      padding: var(--section-padding);
  }
