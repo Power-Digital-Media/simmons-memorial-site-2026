@@ -724,6 +724,27 @@ footer {
         grid-column: span 1;
     }
 
+    /* Fix text positioning on mobile - move to bottom */
+    .bento-large .bento-content {
+        justify-content: flex-end !important;
+        text-align: left;
+    }
+
+    .bento-large {
+        padding-bottom: 0 !important;
+    }
+
+    /* Ensure text is bright and above overlay */
+    .bento-content {
+        z-index: 10 !important;
+    }
+
+    .bento-content h3,
+    .bento-content p {
+        position: relative;
+        z-index: 10;
+    }
+
     .hero-content h1 {
         font-size: 3.5rem;
         /* Toned down */
